@@ -5,6 +5,6 @@ namespace BasicFormValidator.Collection
 {
     public interface IValidatorCollection
     {
-        Dictionary<ValidatorManager.Validators, AbstractValidator> GetValidators();
+        public Dictionary<ValidatorManager.Validators, AbstractValidator> GetValidators();
     }
 }

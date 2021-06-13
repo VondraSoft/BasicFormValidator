@@ -9,6 +9,6 @@ namespace BasicFormValidator.Validator
 {
     public interface IComponentValidator
     {
-        void Validate(ValidationComponent component);
+        public void Validate(ValidationComponent component);
     }
 }

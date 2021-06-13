@@ -4,6 +4,6 @@ namespace BasicFormValidator.Collection
 {
     public interface IValidatorMessageCollection
     {
-        Dictionary<ValidatorManager.Messages, string> getMessages();
+        public Dictionary<ValidatorManager.Messages, string> getMessages();
     }
 }
