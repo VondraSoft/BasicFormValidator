@@ -13,9 +13,9 @@ namespace BasicFormValidator.Collection
             return new Dictionary<ValidatorManager.Messages, string> 
             {
                 { ValidatorManager.Messages.Required, "{component} - This field is required."  },
-                { ValidatorManager.Messages.MinDate, "{component} - Date must be from {YYYY-MM-dd}" },
-                { ValidatorManager.Messages.MaxDate, "{component} - Date must be to {YYYY-MM-dd}" },
-                { ValidatorManager.Messages.MinLength, "{component} - The minimum length is {length}" }
+                { ValidatorManager.Messages.MinDate, "{component} - Date must be from {yyyy-MM-dd}" },
+                { ValidatorManager.Messages.MaxDate, "{component} - Date must be to {yyyy-MM-dd}" },
+                { ValidatorManager.Messages.MinLength, "{component} - The minimum length is {length} chars" }
             };
         }
     }

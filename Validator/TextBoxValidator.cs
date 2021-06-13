@@ -13,8 +13,10 @@ namespace BasicFormValidator.Validator
                 this.AddRequiredError(component.Name);
             }
 
-            if (component.MinLength != 0 && control.Text.Length < component.MinLength) {
-                this.AddInvalidLengthError(component.Name, component.MinLength, ValidatorManager.Messages.MinLength);
+            if (component.Required) {
+                if (component.MinLength != 0 && control.Text.Length < component.MinLength) {
+                    this.AddInvalidLengthError(component.Name, component.MinLength, ValidatorManager.Messages.MinLength);
+                }
             }
         }
     }

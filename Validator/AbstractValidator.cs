@@ -17,6 +17,11 @@ namespace BasicFormValidator.Validator
             return this.errors;
         }
 
+        public void ClearErrors()
+        {
+            this.errors.Clear();
+        }
+
         public void SetMessages(Dictionary<ValidatorManager.Messages, string> messages)
         {
             this.messages = messages;
@@ -40,13 +45,13 @@ namespace BasicFormValidator.Validator
 
         protected void AddInvalidDateError(string componentName, DateTime? date, ValidatorManager.Messages dateMessage)
         {
-            if (dateMessage != ValidatorManager.Messages.MinDate || dateMessage != ValidatorManager.Messages.MaxDate) {
+            if (dateMessage != ValidatorManager.Messages.MinDate && dateMessage != ValidatorManager.Messages.MaxDate) {
                 throw new ArgumentException(string.Format("Message type {0} is not allowed for InvalidDateError", dateMessage));
             }
 
-            string error = this.messages[ValidatorManager.Messages.Required].Replace("{component}", componentName);
+            string error = this.messages[dateMessage].Replace("{component}", componentName);
             string dateFormat = StringHelper.GetStringBetweenTwoCharacters(error, '{', '}');
-            this.errors.Add(this.messages[dateMessage].Replace("{" + dateFormat + "}", date.Value.ToString(dateFormat)));
+            this.errors.Add(error.Replace("{" + dateFormat + "}", date.Value.ToString(dateFormat)));
         }
     }
 }

@@ -145,6 +145,7 @@ namespace BasicFormValidator
                     ));
             }
 
+            validator.ClearErrors();
             validator.SetMessages(this.messages);
             validator.Validate(component);
             this.AddErrors(validator.GetErrors());
