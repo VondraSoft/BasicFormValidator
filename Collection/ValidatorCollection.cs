@@ -7,7 +7,8 @@ namespace BasicFormValidator.Collection
     {
         public Dictionary<ValidatorManager.Validators, AbstractValidator> GetValidators()
         {
-            return new Dictionary<ValidatorManager.Validators, AbstractValidator> {
+            return new Dictionary<ValidatorManager.Validators, AbstractValidator> 
+            {
                 { ValidatorManager.Validators.TextBox, new TextBoxValidator() },
                 { ValidatorManager.Validators.DatePicker, new DatePickerValidator() }
             };

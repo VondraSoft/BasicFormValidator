@@ -10,9 +10,12 @@ namespace BasicFormValidator.Collection
     {
         public Dictionary<ValidatorManager.Messages, string> getMessages()
         {
-            return new Dictionary<ValidatorManager.Messages, string> {
-                { ValidatorManager.Messages.Required, "Požadovaná položka je povinná - {component}"  },
-                { ValidatorManager.Messages.MinDate, "Zadané datum musí být od {YYYY-MM-dd}" }
+            return new Dictionary<ValidatorManager.Messages, string> 
+            {
+                { ValidatorManager.Messages.Required, "{component} - This field is required."  },
+                { ValidatorManager.Messages.MinDate, "{component} - Date must be from {YYYY-MM-dd}" },
+                { ValidatorManager.Messages.MaxDate, "{component} - Date must be to {YYYY-MM-dd}" },
+                { ValidatorManager.Messages.MinLength, "{component} - The minimum length is {length}" }
             };
         }
     }

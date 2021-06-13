@@ -51,16 +51,24 @@ namespace BasicFormValidator
             IValidatorMessageCollection messageCollection = null
         )
         {
-            if (validatorCollection is null) {
-                validatorCollection = new ValidatorCollection();
+            this.validators = new ValidatorCollection().GetValidators();
+            this.messages = new ValidatorMessageCollection().getMessages();
+
+            if (validatorCollection is not null)
+            {
+                foreach (var validator in validatorCollection.GetValidators())
+                {
+                    this.validators[validator.Key] = validator.Value;
+                }
             }
 
-            if (messageCollection is null) {
-                messageCollection = new ValidatorMessageCollection();
+            if (messageCollection is not null)
+            {
+                foreach (var message in messageCollection.getMessages())
+                {
+                    this.messages[message.Key] = message.Value;
+                }
             }
-
-            this.validators = validatorCollection.GetValidators();
-            this.messages = messageCollection.getMessages();
         }
 
         public ValidatorManager AddComponent(ValidationComponent component)
