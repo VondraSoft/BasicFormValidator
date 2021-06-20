@@ -17,7 +17,8 @@ namespace BasicFormValidator
         public enum Validators
         {
             TextBox,
-            DatePicker
+            DatePicker,
+            Password
         }
 
         public enum Messages
@@ -25,7 +26,9 @@ namespace BasicFormValidator
             Required,
             MinLength,
             MinDate,
-            MaxDate
+            MaxDate,
+            Enum,
+            Pattern
         }
 
         public ValidatorManager(IValidatorCollection validatorCollection)

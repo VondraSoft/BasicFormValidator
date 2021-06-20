@@ -15,7 +15,9 @@ namespace BasicFormValidator.Collection
                 { ValidatorManager.Messages.Required, "{component} - This field is required."  },
                 { ValidatorManager.Messages.MinDate, "{component} - Date must be from {yyyy-MM-dd}" },
                 { ValidatorManager.Messages.MaxDate, "{component} - Date must be to {yyyy-MM-dd}" },
-                { ValidatorManager.Messages.MinLength, "{component} - The minimum length is {length} chars" }
+                { ValidatorManager.Messages.MinLength, "{component} - The minimum length is {length} chars" },
+                { ValidatorManager.Messages.Enum, "{component} - The value must be from the enumeration - {enumeration}" },
+                { ValidatorManager.Messages.Pattern, "{component} - The value must following the pattern - {pattern}" }
             };
         }
     }

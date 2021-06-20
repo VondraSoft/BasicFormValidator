@@ -53,5 +53,24 @@ namespace BasicFormValidator.Validator
             string dateFormat = StringHelper.GetStringBetweenTwoCharacters(error, '{', '}');
             this.errors.Add(error.Replace("{" + dateFormat + "}", date.Value.ToString(dateFormat)));
         }
+
+        protected void AddEnumError(string componentName, string[] values)
+        {
+            string error = this.messages[ValidatorManager.Messages.Enum].Replace("{component}", componentName);
+            string enumValues = "";
+
+            foreach (string value in values)
+            {
+                enumValues += value + ", ";
+            }
+
+            this.errors.Add(error.Replace("{enumeration}", enumValues.Substring(enumValues.Length-2)));
+        }
+
+        protected void AddPaternError(string componentName, string pattern)
+        {
+            string error = this.messages[ValidatorManager.Messages.Pattern].Replace("{component}", componentName);
+            this.errors.Add(error.Replace("{pattern}", pattern));
+        }
     }
 }
