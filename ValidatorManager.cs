@@ -134,12 +134,16 @@ namespace BasicFormValidator
         {
             AbstractValidator validator;
 
-            switch (component.Control) {
+            switch (component.Control) 
+            {
                 case TextBox control:
                     validator = this.validators[Validators.TextBox];
                     break;
                 case DatePicker control:
                     validator = this.validators[Validators.DatePicker];
+                    break;
+                case PasswordBox control:
+                    validator = this.validators[Validators.Password];
                     break;
                 default:
                     throw new ArgumentException(string.Format(

@@ -10,12 +10,15 @@ namespace BasicFormValidator.Validator
         {
             PasswordBox control = (PasswordBox)component.Control;
 
-            if (component.Required && control.Password.Length == 0) {
+            if (component.Required && control.Password.Length == 0) 
+            {
                 this.AddRequiredError(component.Name);
             }
 
-            if (component.Required) {
-                if (component.Pattern.Length > 0 && !Regex.IsMatch(control.Password, component.Pattern)) {
+            if (component.Required) 
+            {
+                if (component.Pattern.Length > 0 && !Regex.IsMatch(control.Password, component.Pattern)) 
+                {
                     this.AddPaternError(component.Name, component.Pattern);
                 }
             }
