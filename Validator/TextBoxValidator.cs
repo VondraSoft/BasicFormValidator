@@ -22,7 +22,7 @@ namespace BasicFormValidator.Validator
                     this.AddInvalidLengthError(component.Name, component.MinLength, ValidatorManager.Messages.MinLength);
                 }
 
-                if (component.EnumValues.Length > 0) 
+                if (component.EnumValues is not null && component.EnumValues.Length > 0) 
                 {
                     bool inEnumeration = false;
 
@@ -40,7 +40,7 @@ namespace BasicFormValidator.Validator
                     }
                 }
 
-                if (component.Pattern.Length > 0) 
+                if (component.Pattern is not null && component.Pattern.Length > 0) 
                 {
                     if (!Regex.IsMatch(control.Text, component.Pattern)) 
                     {
